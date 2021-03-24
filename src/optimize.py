@@ -4,6 +4,7 @@ import vgg, pdb, time
 import tensorflow as tf, numpy as np, os
 import transform
 from utils import get_img
+tf.compat.v1.disable_eager_execution()
 
 STYLE_LAYERS = ('relu1_1', 'relu2_1', 'relu3_1', 'relu4_1', 'relu5_1')
 CONTENT_LAYER = 'relu4_2'
@@ -100,7 +101,7 @@ def optimize(content_targets, style_target, content_weight, style_weight,
                 print("Loaded saved state")
                 didLoad = True
         if not didLoad:
-            sess.run(tf.global_variables_initializer())
+            sess.run(tf.compat.v1.global_variables_initializer())
         import random
         uid = random.randint(1, 100)
         print("UID: %s" % uid)
