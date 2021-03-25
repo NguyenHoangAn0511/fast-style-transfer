@@ -7,8 +7,8 @@ from utils import get_img
 tf.compat.v1.disable_eager_execution()
 
 STYLE_LAYERS = ('relu1_1', 'relu2_1', 'relu3_1', 'relu4_1', 'relu5_1')
-CONTENT_LAYER = 'relu3_2'
-# CONTENT_LAYER = 'conv2_2'
+# CONTENT_LAYER = 'relu3_2'
+CONTENT_LAYER = 'conv3_2'
 DEVICES = 'CUDA_VISIBLE_DEVICES'
 
 # np arr, np arr
